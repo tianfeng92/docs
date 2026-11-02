@@ -560,13 +560,13 @@ Get Calico Cloud running on a local Kind cluster, deploy a realistic microservic
 1. Install the Tigera operator and custom resource definitions:
 
    ```bash
-   kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.31.2/manifests/tigera-operator.yaml
+   kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.32.0/manifests/tigera-operator.yaml
    ```
 
 2. Install Calico Cloud by creating the necessary custom resources:
 
    ```bash
-   kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.31.2/manifests/custom-resources.yaml
+   kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.32.0/manifests/custom-resources.yaml
    ```
 
 3. Wait for all components to become available:
@@ -1146,7 +1146,7 @@ The Calico Cloud installer may be able to successfully connect
 
 ## Kubernetes versions[​](#kubernetes-versions)
 
-To install Calico Cloud v22.3.0, your Kubernetes distribution must be based on one of the following Kubernetes versions:
+To install Calico Cloud v22.4.0, your Kubernetes distribution must be based on one of the following Kubernetes versions:
 
 - Kubernetes 1.34
 - Kubernetes 1.33
@@ -1388,7 +1388,7 @@ You can quickly connect a cluster to Calico Cloud by generating a unique kubectl
    Example of generated kubectl command with alternate manifest
 
    ```bash
-   kubectl apply -f https://installer.calicocloud.io/manifests/cc-operator/latest/deploy-with-container-security.yaml && curl -H "Authorization: Bearer ..." "https://www.calicocloud.io/api/managed-cluster/deploy-with-container-security.yaml?version=v22.3.0" | kubectl apply -f -
+   kubectl apply -f https://installer.calicocloud.io/manifests/cc-operator/latest/deploy-with-container-security.yaml && curl -H "Authorization: Bearer ..." "https://www.calicocloud.io/api/managed-cluster/deploy-with-container-security.yaml?version=v22.4.0" | kubectl apply -f -
    ```
 
 6. From a terminal, paste and run the command.
@@ -1598,7 +1598,7 @@ The following parameters are required for all Calico Cloud installations.
 | Parameter                      | Value  | Example        | Description                                             |
 | ------------------------------ | ------ | -------------- | ------------------------------------------------------- |
 | `installer.clusterName`        | string | `cluster-name` | The name given to your managed cluster in Calico Cloud. |
-| `installer.calicoCloudVersion` | string | `v22.3.0`      | The version of Calico Cloud you're installing.          |
+| `installer.calicoCloudVersion` | string | `v22.4.0`      | The version of Calico Cloud you're installing.          |
 
 Example from values.yaml with clusterName and calicoCloudVersion
 
@@ -1607,7 +1607,7 @@ installer:
 
  clusterName: example-cluster
 
- calicoCloudVersion: v22.3.0
+ calicoCloudVersion: v22.4.0
 ```
 
 ### Optional parameters for private registries[​](#optional-parameters-for-private-registries)
@@ -1693,7 +1693,7 @@ For many Calico Cloud components, you can specify node selectors, tolerations, a
 
     clusterName: example-cluster
 
-    calicoCloudVersion: v22.3.0
+    calicoCloudVersion: v22.4.0
    ```
 
 4. Add values for the optional parameters. For each resource you want to edit, uncomment the object, add a value, and save.
@@ -1808,7 +1808,7 @@ Add the required Calico Cloud images to a private registry.
 
 ### Select your version:
 
-v22.3.0 (latest)Helm command to add images for Calico Cloud v22.3.0 (latest)
+v22.4.0 (latest)Helm command to add images for Calico Cloud v22.4.0 (latest)
 
 ```javascript
 helm repo add calico-cloud https://installer.calicocloud.io/charts
@@ -1819,97 +1819,97 @@ IMAGES=(
 
 $INSTALLER_IMAGE
 
-quay.io/tigera/apiserver:v3.22.1
+quay.io/tigera/apiserver:v3.22.4
 
-quay.io/tigera/compliance-benchmarker:v3.22.1
+quay.io/tigera/compliance-benchmarker:v3.22.4
 
-quay.io/tigera/compliance-controller:v3.22.1
+quay.io/tigera/compliance-controller:v3.22.4
 
-quay.io/tigera/compliance-reporter:v3.22.1
+quay.io/tigera/compliance-reporter:v3.22.4
 
-quay.io/tigera/compliance-snapshotter:v3.22.1
+quay.io/tigera/compliance-snapshotter:v3.22.4
 
-quay.io/tigera/key-cert-provisioner:v3.22.1
+quay.io/tigera/key-cert-provisioner:v3.22.4
 
-quay.io/tigera/deep-packet-inspection:v3.22.1
+quay.io/tigera/deep-packet-inspection:v3.22.4
 
-quay.io/tigera/ui-apis:v3.22.1
+quay.io/tigera/ui-apis:v3.22.4
 
-quay.io/tigera/fluentd:v3.22.1
+quay.io/tigera/fluentd:v3.22.4
 
-quay.io/tigera/fluentd-windows:v3.22.1
+quay.io/tigera/fluentd-windows:v3.22.4
 
-quay.io/tigera/guardian:v3.22.1
+quay.io/tigera/guardian:v3.22.4
 
-quay.io/tigera/intrusion-detection-controller:v3.22.1
+quay.io/tigera/intrusion-detection-controller:v3.22.4
 
-quay.io/tigera/waf-http-filter:v3.22.1
+quay.io/tigera/waf-http-filter:v3.22.4
 
-quay.io/tigera/webhooks-processor:v3.22.1
+quay.io/tigera/webhooks-processor:v3.22.4
 
-quay.io/tigera/manager:v3.22.1
+quay.io/tigera/manager:v3.22.4
 
-quay.io/tigera/packetcapture:v3.22.1
+quay.io/tigera/packetcapture:v3.22.4
 
-quay.io/tigera/policy-recommendation:v3.22.1
+quay.io/tigera/policy-recommendation:v3.22.4
 
-quay.io/tigera/egress-gateway:v3.22.1
+quay.io/tigera/egress-gateway:v3.22.4
 
-quay.io/tigera/l7-collector:v3.22.1
+quay.io/tigera/l7-collector:v3.22.4
 
-quay.io/tigera/gateway-l7-collector:v3.22.1
+quay.io/tigera/gateway-l7-collector:v3.22.4
 
-quay.io/tigera/envoy:v3.22.1
+quay.io/tigera/envoy:v3.22.4
 
-quay.io/tigera/prometheus:v3.22.1
+quay.io/tigera/prometheus:v3.22.4
 
-quay.io/tigera/prometheus-service:v3.22.1
+quay.io/tigera/prometheus-service:v3.22.4
 
-quay.io/tigera/alertmanager:v3.22.1
+quay.io/tigera/alertmanager:v3.22.4
 
-quay.io/tigera/queryserver:v3.22.1
+quay.io/tigera/queryserver:v3.22.4
 
-quay.io/tigera/kube-controllers:v3.22.1
+quay.io/tigera/kube-controllers:v3.22.4
 
-quay.io/tigera/node:v3.22.1
+quay.io/tigera/node:v3.22.4
 
-quay.io/tigera/node-windows:v3.22.1
+quay.io/tigera/node-windows:v3.22.4
 
-quay.io/tigera/typha:v3.22.1
+quay.io/tigera/typha:v3.22.4
 
-quay.io/tigera/cni:v3.22.1
+quay.io/tigera/cni:v3.22.4
 
-quay.io/tigera/cni-windows:v3.22.1
+quay.io/tigera/cni-windows:v3.22.4
 
-quay.io/tigera/es-gateway:v3.22.1
+quay.io/tigera/es-gateway:v3.22.4
 
-quay.io/tigera/linseed:v3.22.1
+quay.io/tigera/linseed:v3.22.4
 
-quay.io/tigera/dikastes:v3.22.1
+quay.io/tigera/dikastes:v3.22.4
 
-quay.io/tigera/l7-admission-controller:v3.22.1
+quay.io/tigera/l7-admission-controller:v3.22.4
 
-quay.io/tigera/pod2daemon-flexvol:v3.22.1
+quay.io/tigera/pod2daemon-flexvol:v3.22.4
 
-quay.io/tigera/csi:v3.22.1
+quay.io/tigera/csi:v3.22.4
 
-quay.io/tigera/node-driver-registrar:v3.22.1
+quay.io/tigera/node-driver-registrar:v3.22.4
 
-quay.io/tigera/envoy-gateway:v3.22.1
+quay.io/tigera/envoy-gateway:v3.22.4
 
-quay.io/tigera/envoy-proxy:v3.22.1
+quay.io/tigera/envoy-proxy:v3.22.4
 
-quay.io/tigera/envoy-ratelimit:v3.22.1
+quay.io/tigera/envoy-ratelimit:v3.22.4
 
-quay.io/tigera/istio-pilot:v3.22.1
+quay.io/tigera/istio-pilot:v3.22.4
 
-quay.io/tigera/istio-install-cni:v3.22.1
+quay.io/tigera/istio-install-cni:v3.22.4
 
-quay.io/tigera/istio-ztunnel:v3.22.1
+quay.io/tigera/istio-ztunnel:v3.22.4
 
-quay.io/tigera/istio-proxyv2:v3.22.1
+quay.io/tigera/istio-proxyv2:v3.22.4
 
-quay.io/tigera/operator:v1.40.5
+quay.io/tigera/operator:v1.40.10
 
 quay.io/tigera/image-assurance-admission-controller:v1.22.9
 
@@ -1925,9 +1925,9 @@ quay.io/tigera/skimble:v1.23.2
 
 quay.io/tigera/cc-core:v0.3.5
 
-quay.io/tigera/prometheus-operator:v3.22.1
+quay.io/tigera/prometheus-operator:v3.22.4
 
-quay.io/tigera/prometheus-config-reloader:v3.22.1
+quay.io/tigera/prometheus-config-reloader:v3.22.4
 
 quay.io/tigera/cc-cni-config-scanner:v0.7.1
 
@@ -3257,7 +3257,7 @@ To upgrade a managed cluster to the latest version of Calico Cloud:
    Example of generated kubectl command with alternate manifest
 
    ```bash
-   kubectl apply -f https://installer.calicocloud.io/manifests/cc-operator/latest/deploy-with-container-security.yaml && curl -H "Authorization: Bearer ..." "https://www.calicocloud.io/api/managed-cluster/deploy-with-container-security.yaml?version=v22.3.0" | kubectl apply -f -
+   kubectl apply -f https://installer.calicocloud.io/manifests/cc-operator/latest/deploy-with-container-security.yaml && curl -H "Authorization: Bearer ..." "https://www.calicocloud.io/api/managed-cluster/deploy-with-container-security.yaml?version=v22.4.0" | kubectl apply -f -
    ```
 
 5. From a terminal, paste and run the command. The cluster's status under **Connection Status** changes to **Disconnected: Installing**. When the upgrade is complete, the status changes to **Connected**.
@@ -13339,7 +13339,7 @@ The basic workflow is:
 
 ### Create a config map with FortiGate and FortiManager information[​](#create-a-config-map-with-fortigate-and-fortimanager-information)
 
-1. In the [FortiGate ConfigMap manifest](https://downloads.tigera.io/ee/v3.22.1/manifests/fortinet-device-configmap.yaml), add your FortiGate firewall information in the data section, `tigera.firewall.fortigate`.
+1. In the [FortiGate ConfigMap manifest](https://downloads.tigera.io/ee/v3.22.4/manifests/fortinet-device-configmap.yaml), add your FortiGate firewall information in the data section, `tigera.firewall.fortigate`.
 
    Where:
 
@@ -13379,7 +13379,7 @@ The basic workflow is:
     key: apikey-fortigate-east2
    ```
 
-2. In the [FortiManager ConfigMap manifest](https://downloads.tigera.io/ee/v3.22.1/manifests/fortinet-device-configmap.yaml), add your FortiManager information in the data section, `tigera.firewall.fortimgr`.
+2. In the [FortiManager ConfigMap manifest](https://downloads.tigera.io/ee/v3.22.4/manifests/fortinet-device-configmap.yaml), add your FortiManager information in the data section, `tigera.firewall.fortimgr`.
 
    Where:
 
@@ -13418,7 +13418,7 @@ The basic workflow is:
 1. Apply the manifest.
 
    ```text
-   kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/fortinet-device-configmap.yaml
+   kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/fortinet-device-configmap.yaml
    ```
 
 ### Install FortiGate ApiKey and FortiManager password as secrets[​](#install-fortigate-apikey-and-fortimanager-password-as-secrets)
@@ -13458,7 +13458,7 @@ The basic workflow is:
 2. Apply the manifest.
 
    ```text
-   kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/fortinet.yaml
+   kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/fortinet.yaml
    ```
 
 ## Verify the integration[​](#verify-the-integration)
@@ -13553,7 +13553,7 @@ Create a [Calico Cloud tier](https://docs.tigera.io/calico-cloud/network-policy/
     kubectl create namespace tigera-firewall-controller
    ```
 
-2. In this [FortiManager ConfigMap manifest](https://downloads.tigera.io/ee/v3.22.1/manifests/fortimanager-device-configmap.yaml), add your FortiManager device information in the data section: `tigera.firewall.fortimanager-policies`. For example:
+2. In this [FortiManager ConfigMap manifest](https://downloads.tigera.io/ee/v3.22.4/manifests/fortimanager-device-configmap.yaml), add your FortiManager device information in the data section: `tigera.firewall.fortimanager-policies`. For example:
 
    ```yaml
     tigera.firewall.fortimanager-policies: |
@@ -13596,7 +13596,7 @@ Create a [Calico Cloud tier](https://docs.tigera.io/calico-cloud/network-policy/
 3. Apply the manifest.
 
    ```bash
-   kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/fortimanager-device-configmap.yaml
+   kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/fortimanager-device-configmap.yaml
    ```
 
 ## Install FortiManager password as secrets[​](#install-fortimanager-password-as-secrets)
@@ -13628,7 +13628,7 @@ kubectl create secret generic fortimgr-east1 \
 2. Apply the manifest.
 
    ```bash
-   kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/fortimanager.yaml
+   kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/fortimanager.yaml
    ```
 
 ## Verify the integration[​](#verify-the-integration)
@@ -18253,7 +18253,7 @@ In this section we will look at how to add Tor and VPN feeds to Calico Cloud. In
    <!-- -->
 
    ```shell
-   kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/threatdef/vpn-feed.yaml
+   kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/threatdef/vpn-feed.yaml
    ```
 
    <!-- -->
@@ -18263,7 +18263,7 @@ In this section we will look at how to add Tor and VPN feeds to Calico Cloud. In
    <!-- -->
 
    ```shell
-   kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/threatdef/tor-exit-feed.yaml
+   kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/threatdef/tor-exit-feed.yaml
    ```
 
 2. Now, you can monitor the Dashboard for any malicious activity. The dashboard can be found at the Calico Cloud web console, go to "kibana" and then go to "Dashboard". Select "Tor-VPN Dashboard".
@@ -19523,13 +19523,13 @@ If the CLI scanner is part of your pipeline, scanning is done before runtime and
    **Linux**
 
    ```shell
-   curl -Lo tigera-scanner https://installer.calicocloud.io/tigera-scanner/v3.22.1-2/image-assurance-scanner-cli-linux-amd64
+   curl -Lo tigera-scanner https://installer.calicocloud.io/tigera-scanner/v3.22.4-1/image-assurance-scanner-cli-linux-amd64
    ```
 
    **macOS**
 
    ```shell
-   curl -Lo tigera-scanner https://installer.calicocloud.io/tigera-scanner/v3.22.1-2/image-assurance-scanner-cli-darwin-amd64
+   curl -Lo tigera-scanner https://installer.calicocloud.io/tigera-scanner/v3.22.4-1/image-assurance-scanner-cli-darwin-amd64
    ```
 
 2. Set the executable flag on the binary.
@@ -20156,7 +20156,7 @@ Container admission policies are custom Kubernetes resources that allow you to c
    You can either generate the TLS key and certificate yourself and move them to the current folder under the names `admission_controller_key.pem` and `admission_controller_cert.pem`, or use the following command to generate the pair:
 
    ```bash
-   export URL="https://installer.calicocloud.io/manifests/v3.22.1-2/manifests" && curl ${URL}/generate-open-ssl-key-cert-pair.sh | bash
+   export URL="https://installer.calicocloud.io/manifests/v3.22.4-1/manifests" && curl ${URL}/generate-open-ssl-key-cert-pair.sh | bash
    ```
 
    > **WARNING:** If you generate the key and certificate pair yourself, you must set the SANS to `tigera-image-assurance-admission-controller-service.tigera-image-assurance.svc`.
@@ -21057,7 +21057,7 @@ To run a report on demand:
 1. Download the pod template corresponding to your installation method.
 
    ```bash
-   curl https://downloads.tigera.io/ee/v3.22.1/manifests/compliance-reporter-pod-managed.yaml -o compliance-reporter-pod.yaml
+   curl https://downloads.tigera.io/ee/v3.22.4/manifests/compliance-reporter-pod-managed.yaml -o compliance-reporter-pod.yaml
    ```
 
 2. Edit the template as follows:
@@ -21244,7 +21244,7 @@ To manually run a report:
    **Operator**
 
    ```bash
-   curl https://downloads.tigera.io/ee/v3.22.1/manifests/compliance-reporter-pod-managed.yaml -o compliance-reporter-pod.yaml
+   curl https://downloads.tigera.io/ee/v3.22.4/manifests/compliance-reporter-pod-managed.yaml -o compliance-reporter-pod.yaml
    ```
 
 2. Edit the template as follows:
@@ -21881,7 +21881,9 @@ Creating an ingress gateway with Calico Ingress Gateway involves only a few step
 
 ## Create an ingress gateway[​](#create-an-ingress-gateway-1)
 
-1. To enable Gateway API support, create a `GatewayAPI` resource with the name `tigera-secure`:
+1. If you are using a [global default deny policy](https://docs.tigera.io/calico-cloud/network-policy/beginners/kubernetes-default-deny), allow traffic through the gateway by adding the `tigera-gateway` namespace to the list of excluded namespaces in the `namespaceSelector` field.
+
+2. To enable Gateway API support, create a `GatewayAPI` resource with the name `tigera-secure`:
 
    ```bash
    kubectl apply -f - <<EOF
@@ -21915,7 +21917,7 @@ Creating an ingress gateway with Calico Ingress Gateway involves only a few step
 
    > **SUCCESS:** `tigera-gateway-class` is the name of the single default `GatewayClass` resource that is created when you enable Gateway API support. You can define [additional gateway classes](https://docs.tigera.io/calico-cloud/networking/ingress-gateway/customize-ingress-gateway#configure-multiple-gateway-classes), along with other customizations, in the `GatewayAPI` resource.
 
-2. Create a `Gateway` resource that is linked to `tigera-gateway-class`.
+3. Create a `Gateway` resource that is linked to `tigera-gateway-class`.
 
    Example snippet of a Gateway resource with default gatewayClassName
 
@@ -21937,7 +21939,7 @@ Creating an ingress gateway with Calico Ingress Gateway involves only a few step
 
    Replace `<gateway-name>` with a name for your gateway. You will refer to this gateway name for all services you want to use the gateway.
 
-3. Create a gateway routing resource that refers to your `Gateway` resource as `.spec.parentRefs`:
+4. Create a gateway routing resource that refers to your `Gateway` resource as `.spec.parentRefs`:
 
    Example snippet of an HTTPRoute resource
 
@@ -25414,7 +25416,7 @@ The following table lists common MTU sizes for Calico Cloud environments. Becaus
 
 **Recommended MTU for overlay networking**
 
-The extra overlay header used in IP in IP, VXLAN and WireGuard protocols, reduces the minimum MTU by the size of the header. (IP in IP uses a 20-byte header, IPv4 VXLAN uses a 50-byte header, IPv6 VXLAN uses a 70-byte header, IPv4 WireGuard uses a [60-byte header](https://lists.zx2c4.com/pipermail/wireguard/2017-December/002201.html) and IPv6 WireGuard uses an 80-byte header).
+The extra overlay header used in IP in IP, VXLAN and WireGuard protocols, reduces the minimum MTU by the size of the header. (IP in IP uses a 20-byte header, IPv4 VXLAN uses a 50-byte header, IPv6 VXLAN uses a 70-byte header, IPv4 WireGuard uses a 60-byte header and IPv6 WireGuard uses an 80-byte header).
 
 When using AKS, the underlying network has an [MTU of 1400](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-tcpip-performance-tuning#azure-and-vm-mtu), even though the network interface will have an MTU of 1500. WireGuard sets the Don't Fragment (DF) bit on its packets, and so the MTU for WireGuard on AKS needs to be set to 60 bytes below (or 80 bytes for IPv6) the 1400 MTU of the underlying network to avoid dropped packets.
 
@@ -31181,13 +31183,13 @@ In this section, we will create a `kubeconfig` for each cluster. This `kubeconfi
 1. Create the ServiceAccount used by remote clusters for authentication:
 
    ```bash
-   kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/federation-remote-sa.yaml
+   kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/federation-remote-sa.yaml
    ```
 
 2. Create the ClusterRole and ClusterRoleBinding used by remote clusters for authorization:
 
    ```bash
-   kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/federation-rem-rbac-kdd.yaml
+   kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/federation-rem-rbac-kdd.yaml
    ```
 
 3. Create the ServiceAccount token that will be used in the `kubeconfig`:
@@ -31979,7 +31981,7 @@ subsets:
 ## Additional resources[​](#additional-resources)
 
 - [Cluster mesh example for AWS](https://docs.tigera.io/calico-cloud/multicluster/aws)
-- [Federated service controller](https://docs.tigera.io/calico-cloud/reference/component-resources/kube-controllers/configuration)
+- [Federated services controller](https://docs.tigera.io/calico-cloud/reference/resources/kubecontrollersconfig#federatedservicescontroller)
 
 ### Cluster mesh example for clusters in AWS
 
@@ -32236,7 +32238,7 @@ The script migrates all applicable Calico Cloud components to open-source Projec
 
 ### Run the migration script[​](#run-the-migration-script)
 
-1. Download the script `curl -O https://installer.calicocloud.io/manifests/v3.22.1-2/downgrade.sh`.
+1. Download the script `curl -O https://installer.calicocloud.io/manifests/v3.22.4-1/downgrade.sh`.
 
 2. Make the script executable `chmod +x downgrade.sh`.
 
@@ -32262,7 +32264,7 @@ There is no additional cost for log data ingestion.
 
 ## View your usage metrics[​](#view-your-usage-metrics)
 
-To view usage metrics, Calico Cloud administrators can go to the web console, click the user icon , and then click **Usage Metrics**.
+To view usage metrics, Calico Cloud Owners or users with Usage Metrics role can go to the web console, click the user icon , and then click **Usage Metrics**.
 
 ![A screenshot of the Usage Metrics page in the Calico Cloud web console.](https://docs.tigera.io/img/calico-cloud/usage-metrics.png)
 
@@ -33898,7 +33900,7 @@ export NAMESPACE=<my-prometheus-namespace>
 ```
 
 ```bash
-kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/prometheus/elasticsearch-metrics-service-monitor.yaml -n $NAMESPACE
+kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/prometheus/elasticsearch-metrics-service-monitor.yaml -n $NAMESPACE
 ```
 
 The .yamls have no namespace defined so when you apply `kubectl`, it is applied in the $NAMESPACE.
@@ -33940,7 +33942,7 @@ export NAMESPACE=<my-prometheus-namespace>
 ```
 
 ```bash
-kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/prometheus/fluentd-metrics-service-monitor.yaml -n $NAMESPACE
+kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/prometheus/fluentd-metrics-service-monitor.yaml -n $NAMESPACE
 ```
 
 The .yamls have no namespace defined so when you apply `kubectl`, it is applied in the $NAMESPACE.
@@ -33982,7 +33984,7 @@ export NAMESPACE=<my-prometheus-namespace>
 ```
 
 ```bash
-kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/prometheus/calico-node-monitor-service-monitor.yaml -n $NAMESPACE
+kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/prometheus/calico-node-monitor-service-monitor.yaml -n $NAMESPACE
 ```
 
 The .yamls have no namespace defined so when you apply `kubectl`, it is applied in $NAMESPACE.
@@ -34024,7 +34026,7 @@ export NAMESPACE=<my-prometheus-namespace>
 ```
 
 ```bash
-kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/prometheus/kube-controller-metrics-service-monitor.yaml -n $NAMESPACE
+kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/prometheus/kube-controller-metrics-service-monitor.yaml -n $NAMESPACE
 ```
 
 The .yamls have no namespace defined so when you apply `kubectl`, it is applied in the $NAMESPACE.
@@ -34108,7 +34110,7 @@ export NAMESPACE=<my-prometheus-namespace>
 ```
 
 ```bash
-kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/prometheus/felix-metrics-service-monitor.yaml -n $NAMESPACE
+kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/prometheus/felix-metrics-service-monitor.yaml -n $NAMESPACE
 ```
 
 The .yamls have no namespace defined so when you apply `kubectl`, it is applied in the $NAMESPACE.
@@ -34142,7 +34144,7 @@ export NAMESPACE=<my-prometheus-namespace>
 ```
 
 ```bash
-kubectl apply -f https://downloads.tigera.io/ee/v3.22.1/manifests/prometheus/typha-metrics-service-monitor.yaml -n $NAMESPACE
+kubectl apply -f https://downloads.tigera.io/ee/v3.22.4/manifests/prometheus/typha-metrics-service-monitor.yaml -n $NAMESPACE
 ```
 
 The .yamls have no namespace defined so when you apply `kubectl`, it is applied in the $NAMESPACE.
@@ -36258,10 +36260,6 @@ APIs, CLI, architecture and design, and FAQ.
 ##### [Configure resource requests and limits](https://docs.tigera.io/calico-cloud/reference/component-resources/configure-resources)
 
 [Reference for setting Kubernetes resource requests and limits on Calico Cloud components managed by the Tigera Operator in connected clusters.](https://docs.tigera.io/calico-cloud/reference/component-resources/configure-resources)
-
-##### [Configuring the Calico Cloud Kubernetes controllers](https://docs.tigera.io/calico-cloud/reference/component-resources/kube-controllers/configuration)
-
-[Reference for kube-controllers configuration in Calico Cloud connected clusters covering environment variables and KubeControllersConfiguration options.](https://docs.tigera.io/calico-cloud/reference/component-resources/kube-controllers/configuration)
 
 ##### [Monitoring kube-controllers with Prometheus](https://docs.tigera.io/calico-cloud/reference/component-resources/kube-controllers/prometheus)
 
@@ -48317,7 +48315,13 @@ The data fields in the license key resource may change without warning. The lice
 
 ### Kubernetes controllers configuration
 
-A Calico Cloud [Kubernetes controllers](https://docs.tigera.io/calico-cloud/reference/component-resources/kube-controllers/configuration) configuration resource (`KubeControllersConfiguration`) represents configuration options for the Calico Cloud Kubernetes controllers.
+A Calico Cloud Kubernetes controllers configuration resource (`KubeControllersConfiguration`) configures the controllers that run inside the `tigera/kube-controllers` container. These controllers monitor the Kubernetes API and reconcile cluster state with the Calico Cloud datastore.
+
+The `tigera/kube-controllers` container can run the following controllers; each is enabled by including a corresponding block under `spec.controllers`, and disabled by omitting the block.
+
+- **Node controller** — garbage collects IP addresses, cleans up Calico Cloud node data when Kubernetes nodes are removed, and optionally creates and syncs host endpoints for each node.
+- **Federated services controller** — watches Kubernetes services and endpoints locally and across all remote clusters defined through [RemoteClusterConfigurations](https://docs.tigera.io/calico-cloud/reference/resources/remoteclusterconfiguration), and programs Kubernetes endpoints for any locally-configured service that specifies a federation selector annotation. See [Configuring federated services](https://docs.tigera.io/calico-cloud/multicluster/services-controller) for the usage guide.
+- **Load balancer controller** — manages IPAM for Services of type `LoadBalancer`.
 
 ## Sample YAML[​](#sample-yaml)
 
@@ -48490,7 +48494,7 @@ It would match:
 
 ### FederatedServicesController[​](#federatedservicescontroller)
 
-The federated services controller syncs Kubernetes services from remote clusters defined through [RemoteClusterConfigurations](https://docs.tigera.io/calico-cloud/reference/resources/remoteclusterconfiguration).
+The federated services controller syncs Kubernetes services from remote clusters defined through [RemoteClusterConfigurations](https://docs.tigera.io/calico-cloud/reference/resources/remoteclusterconfiguration). It must have read access to the Kubernetes API to monitor `Service` and `Endpoints` events, and write access to update `Endpoints`. For the usage guide, see [Configuring federated services](https://docs.tigera.io/calico-cloud/multicluster/services-controller).
 
 | Field            | Description                                                      | Schema                                                        | Default |
 | ---------------- | ---------------------------------------------------------------- | ------------------------------------------------------------- | ------- |
@@ -51047,7 +51051,7 @@ However, unlike a compute server which has a relatively unconstrained amount of 
 
 ## [🗃Calico Cloud Kubernetes controllers](https://docs.tigera.io/calico-cloud/reference/component-resources/kube-controllers/)
 
-[2 items](https://docs.tigera.io/calico-cloud/reference/component-resources/kube-controllers/)
+[1 item](https://docs.tigera.io/calico-cloud/reference/component-resources/kube-controllers/)
 
 ## [🗃Calico Cloud node (cnx-node)](https://docs.tigera.io/calico-cloud/reference/component-resources/node/)
 
@@ -52757,84 +52761,10 @@ This command will output the configured resource requests and limits for the Pac
 
 ### kube-controllers
 
-<!-- -->
+The `tigera/kube-controllers` container runs a set of controllers that monitor the Kubernetes API and reconcile cluster state with the Calico Cloud datastore.
 
-## [📄️Configuring the Calico Cloud Kubernetes controllers](https://docs.tigera.io/calico-cloud/reference/component-resources/kube-controllers/configuration)
-
-[Reference for kube-controllers configuration in Calico Cloud connected clusters covering environment variables and KubeControllersConfiguration options.](https://docs.tigera.io/calico-cloud/reference/component-resources/kube-controllers/configuration)
-
-## [📄️Monitoring kube-controllers with Prometheus](https://docs.tigera.io/calico-cloud/reference/component-resources/kube-controllers/prometheus)
-
-[Prometheus metrics reference for the kube-controllers component in Calico Cloud connected clusters covering reconcile latency and queue depth.](https://docs.tigera.io/calico-cloud/reference/component-resources/kube-controllers/prometheus)
-
-### Configuring the Calico Cloud Kubernetes controllers
-
-<!-- -->
-
-The Calico Cloud Kubernetes controllers are deployed in a Kubernetes cluster. The different controllers monitor the Kubernetes API and perform actions based on cluster state.
-
-<!-- tabs -->
-
-**Tab: Operator**
-
-If you have installed Calico using the operator, see the [KubeControllersConfiguration](https://docs.tigera.io/calico-cloud/reference/resources/kubecontrollersconfig) resource instead.
-
-**Tab: Manifest**
-
-The controllers are primarily configured through environment variables. When running the controllers as a Kubernetes pod, this is accomplished through the pod manifest `env` section.
-
-## The tigera/kube-controllers container[​](#the-tigerakube-controllers-container)
-
-The `tigera/kube-controllers` container includes the following controllers:
-
-1. node controller: watches for the removal of Kubernetes nodes and removes corresponding data from Calico Cloud, and optionally watches for node updates to create and sync host endpoints for each node.
-2. federation controller: watches Kubernetes services and endpoints locally and across all remote clusters, and programs Kubernetes endpoints for any locally configured service that specifies a service federation selector annotation.
-
-### Configuring datastore access[​](#configuring-datastore-access)
-
-The datastore type can be configured via the `DATASTORE_TYPE` environment variable. Only supported value is `kubernetes`.
-
-#### kubernetes[​](#kubernetes)
-
-When running the controllers as a Kubernetes pod, Kubernetes API access is [configured automatically](https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster/#accessing-the-api-from-a-pod) and no additional configuration is required. However, the controllers can also be configured to use an explicit [kubeconfig](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/) file override to configure API access if needed.
-
-| Environment  | Description                                                        | Schema |
-| ------------ | ------------------------------------------------------------------ | ------ |
-| `KUBECONFIG` | Path to a Kubernetes kubeconfig file mounted within the container. | path   |
-
-### Other configuration[​](#other-configuration)
-
-> **SECONDARY:** Whenever possible, prefer configuring the kube-controllers component using the [KubeControllersConfiguration](https://docs.tigera.io/calico-cloud/reference/resources/kubecontrollersconfig) API resource, Some configuration options may not be available through environment variables.
-
-The following environment variables can be used to configure the Calico Cloud Kubernetes controllers.
-
-| Environment           | Description                                                                 | Schema                                                    | Default                                               |
-| --------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------- |
-| `DATASTORE_TYPE`      | Which datastore type to use                                                 | etcdv3, kubernetes                                        | kubernetes                                            |
-| `ENABLED_CONTROLLERS` | Which controllers to run                                                    | namespace, node, policy, serviceaccount, workloadendpoint | policy,namespace,serviceaccount,workloadendpoint,node |
-| `LOG_LEVEL`           | Minimum log level to be displayed.                                          | debug, info, warning, error                               | info                                                  |
-| `KUBECONFIG`          | Path to a kubeconfig file for Kubernetes API access                         | path                                                      |                                                       |
-| `SYNC_NODE_LABELS`    | When enabled, Kubernetes node labels will be copied to Calico node objects. | boolean                                                   | true                                                  |
-| `AUTO_HOST_ENDPOINTS` | When set to enabled, automatically create a host endpoint for each node.    | enabled, disabled                                         | disabled                                              |
-
-## About each controller[​](#about-each-controller)
-
-### Node controller[​](#node-controller)
-
-The node controller has several functions.
-
-- Garbage collects IP addresses.
-- Automatically provisions host endpoints for Kubernetes nodes.
-
-### Federation controller[​](#federation-controller)
-
-The federation controller syncs Kubernetes federated endpoint changes to the Calico Cloud datastore. The controller must have read access to the Kubernetes API to monitor `Service` and `Endpoints` events, and must also have write access to update `Endpoints`.
-
-The federation controller is disabled by default if `ENABLED_CONTROLLERS` is not explicitly specified.
-
-This controller is valid for all Calico Cloud datastore types. For more details refer to the [Configuring federated services](https://docs.tigera.io/calico-cloud/multicluster/services-controller) usage guide.
-
-<!-- /tabs -->
+- To configure the controllers, see the [KubeControllersConfiguration](https://docs.tigera.io/calico-cloud/reference/resources/kubecontrollersconfig) resource reference.
+- For exported Prometheus metrics, see [Prometheus statistics](https://docs.tigera.io/calico-cloud/reference/component-resources/kube-controllers/prometheus).
 
 ### Monitoring kube-controllers with Prometheus
 
@@ -62782,9 +62712,21 @@ Go to [Calico Cloud Status](https://status.calicocloud.io) to view the current s
 
 ### Calico Cloud release notes
 
-## April 7, 2026 (version 22.3.0)
+## May 19, 2026 (version 22.4.0)
 
 ### New features and enhancements[​](#new-features-and-enhancements)
+
+#### Audit logs[​](#audit-logs)
+
+Calico Cloud now records audit events for user activity, including user sign-ins and group assignments. To view them in the web console, go to **Activity > Audit logs**.
+
+#### Enhancements[​](#enhancements)
+
+- The **Usage Metrics** page now includes a per-project breakdown of vCPU hours.
+
+## April 7, 2026 (version 22.3.0)
+
+### New features and enhancements[​](#new-features-and-enhancements-1)
 
 #### Mylo AI assistant (tech preview)[​](#mylo-ai-assistant-tech-preview)
 
@@ -62800,7 +62742,7 @@ To configure notifications, click the user icon  **> Notifications**.
 
 ## March 5, 2026 (version 22.2.0)
 
-### New features and enhancements[​](#new-features-and-enhancements-1)
+### New features and enhancements[​](#new-features-and-enhancements-2)
 
 #### Istio Ambient Mode (tech preview)[​](#istio-ambient-mode-tech-preview)
 
@@ -62808,13 +62750,13 @@ Calico Cloud now provides a bundled version of Istio in ambient mode, a sidecarl
 
 For more information, see [Istio Ambient Mode](https://docs.tigera.io/calico-cloud/compliance/istio/about-istio-ambient).
 
-#### Enhancements[​](#enhancements)
+#### Enhancements[​](#enhancements-1)
 
 - Enhancements to to Calico Cloud dashboards.
 
 ## February 5, 2026 (web console update)
 
-### New features and enhancements[​](#new-features-and-enhancements-2)
+### New features and enhancements[​](#new-features-and-enhancements-3)
 
 #### Projects[​](#projects)
 
@@ -62836,7 +62778,7 @@ For more information, see [Create and assign custom roles](https://docs.tigera.i
 
 ## December 1, 2025 (version 22.1.0)
 
-### New features and enhancements[​](#new-features-and-enhancements-3)
+### New features and enhancements[​](#new-features-and-enhancements-4)
 
 #### Dashboards are GA[​](#dashboards-are-ga)
 
@@ -62844,7 +62786,7 @@ Calico Cloud's built-in observability dashboards are now generally available. Th
 
 For more information, see [Dashboards](https://docs.tigera.io/calico-cloud/observability/dashboards).
 
-#### Enhancements[​](#enhancements-1)
+#### Enhancements[​](#enhancements-2)
 
 - Added various user experience improvements to dashboards in the web console.
 
@@ -62870,7 +62812,7 @@ This release adds support for Kubernetes 1.34.
 
 ## October 21, 2025 (web console update)
 
-### New features and enhancements[​](#new-features-and-enhancements-4)
+### New features and enhancements[​](#new-features-and-enhancements-5)
 
 - Improved search and user experience for the **Policies** page in the Calico Cloud Free Tier web console.
 
@@ -62886,7 +62828,7 @@ This release adds support for Kubernetes 1.34.
 
 ## September 8, 2025 (version 22.0.0)
 
-### New features and enhancements[​](#new-features-and-enhancements-5)
+### New features and enhancements[​](#new-features-and-enhancements-6)
 
 #### Calico Ingress Gateway is GA[​](#calico-ingress-gateway-is-ga)
 
@@ -62918,7 +62860,7 @@ This release includes support for HTTP header-based matching for application lay
 
 For more information, see [Global network policy](https://docs.tigera.io/calico-cloud/reference/resources/globalnetworkpolicy#httpheadermatch).
 
-#### Enhancements[​](#enhancements-2)
+#### Enhancements[​](#enhancements-3)
 
 - To support a minimal footprint and simplify resource management, the API server component and its associated resources have been moved from the `tigera-system` namespace to the `calico-system` namespace.
 
@@ -62934,7 +62876,7 @@ You can now install or upgrade to the following versions:
 
 ## August 5, 2025 (web console update)
 
-### New features and enhancements[​](#new-features-and-enhancements-6)
+### New features and enhancements[​](#new-features-and-enhancements-7)
 
 #### Predefined user roles for Entra ID groups[​](#predefined-user-roles-for-entra-id-groups)
 
@@ -62944,7 +62886,7 @@ For more information, see [Give role-based access to an Entra ID group](https:/
 
 ## June 23, 2025 (version 21.3.0)
 
-### New features and enhancements[​](#new-features-and-enhancements-7)
+### New features and enhancements[​](#new-features-and-enhancements-8)
 
 #### Policy recommendations for Calico Cloud Free Tier[​](#policy-recommendations-for-calico-cloud-free-tier)
 
@@ -62974,7 +62916,7 @@ For more information, see [Webhooks for security event alerts](https://docs.tige
 
 You can now use the web console to view details of the default rule set used by Web Application Firewall. From the **Web Application Firewall** page, click the **Rulesets** tab to open a list of default rules.
 
-#### Enhancements[​](#enhancements-3)
+#### Enhancements[​](#enhancements-4)
 
 - Added web console support for `AdminNetworkPolicy` and `BaseAdminNetworkPolicy` tiers (view-only).
 - Performance and user experience improvements to custom dashboards.
@@ -62999,7 +62941,7 @@ This release adds support for Kubernetes 1.32 and 1.33.
 
 ## May 5, 2025 (web console update)[​](#may-5-2025-web-console-update)
 
-### New features and enhancements[​](#new-features-and-enhancements-8)
+### New features and enhancements[​](#new-features-and-enhancements-9)
 
 #### Introducing Calico Cloud Free Tier[​](#introducing-calico-cloud-free-tier)
 
@@ -63019,7 +62961,7 @@ For more information about Calico Cloud Free Tier, see the [overview](https://do
 
 ## April 29, 2025 (version 21.2.0)
 
-### New features and enhancements[​](#new-features-and-enhancements-9)
+### New features and enhancements[​](#new-features-and-enhancements-10)
 
 #### New pre-defined user roles[​](#new-pre-defined-user-roles)
 
@@ -63076,7 +63018,7 @@ For more information, see [Install Calico Cloud](https://docs.tigera.io/calico-c
 
 ## March 10, 2025 (version 21.0.0)
 
-### New features and enhancements[​](#new-features-and-enhancements-10)
+### New features and enhancements[​](#new-features-and-enhancements-11)
 
 #### Custom dashboards (tech preview)[​](#custom-dashboards-tech-preview)
 
@@ -63096,7 +63038,7 @@ Calico Cloud now extends its IPAM capabilities to support service LoadBalancer I
 
 For more information, see [LoadBalancer IP address management](https://docs.tigera.io/calico-cloud/networking/ipam/service-loadbalancer).
 
-#### Enhancements[​](#enhancements-4)
+#### Enhancements[​](#enhancements-5)
 
 - We improved how the web console performs in cases where there are a large number of policy tiers for managed clusters. To see these optimizations, make sure your managed clusters are running Calico Cloud 21.0.0 or later.
 
@@ -63118,7 +63060,7 @@ You can now install or upgrade to the following versions:
 
 ## February 11, 2025 (version 20.4.0)
 
-### New features and enhancements[​](#new-features-and-enhancements-11)
+### New features and enhancements[​](#new-features-and-enhancements-12)
 
 #### Exporting custom dashboard cards as CSV files[​](#exporting-custom-dashboard-cards-as-csv-files)
 
@@ -63134,7 +63076,7 @@ We added support for customizing the namespace labels on AKS clusters. By defaul
 
 ## January 9, 2025 (web console update)[​](#january-9-2025-web-console-update)
 
-### New features and enhancements[​](#new-features-and-enhancements-12)
+### New features and enhancements[​](#new-features-and-enhancements-13)
 
 #### Secure web console access with IP allowlists[​](#secure-web-console-access-with-ip-allowlists)
 
@@ -63151,7 +63093,7 @@ To configure an IP allowlist, [open a support ticket](https://tigeraio.my.site.c
 
 ## December 17, 2024 (web console update)[​](#december-17-2024-web-console-update)
 
-### New features and enhancements[​](#new-features-and-enhancements-13)
+### New features and enhancements[​](#new-features-and-enhancements-14)
 
 #### Dashboards (tech preview)[​](#dashboards-tech-preview)
 
@@ -63165,7 +63107,7 @@ For more information, see [Dashboards](https://docs.tigera.io/calico-cloud/obser
 
 > **INFO:** Because of a breaking change, this version is no longer available. Upgrade instead to [Calico Cloud 20.3.1](#20.3.1) or later.
 
-### New features and enhancements[​](#new-features-and-enhancements-14)
+### New features and enhancements[​](#new-features-and-enhancements-15)
 
 #### Image Assurance scan result management[​](#image-assurance-scan-result-management)
 
@@ -63197,7 +63139,7 @@ Calico Cloud includes improvements so that early network configuration will be s
 
 For more information see [Deploy a dual ToR cluster](https://docs.tigera.io/calico-cloud/networking/configuring/dual-tor).
 
-#### Enhancements[​](#enhancements-5)
+#### Enhancements[​](#enhancements-6)
 
 - Guardian will respect HTTP proxy environment variables when set on the deployment by mutating webhook configurations.
 - Enhanced filtering options in the endpoints page of the web console.
@@ -63213,13 +63155,13 @@ For more information see [Deploy a dual ToR cluster](https://docs.tigera.io/cali
 
 ## November 6, 2024 (version 20.2.0)[​](#november-6-2024-version-2020)
 
-### New features and enhancements[​](#new-features-and-enhancements-15)
+### New features and enhancements[​](#new-features-and-enhancements-16)
 
 #### Image Assurance scan result management[​](#image-assurance-scan-result-management-1)
 
 In this release, you can more easily manage your Image Assurance scan results by deleting results you don't need. On the **All Scan Results** page, select the checkbox next to result item, and then click **Actions > Delete**. You can also select multiple results and delete them as a bulk action.
 
-#### Enhancements[​](#enhancements-6)
+#### Enhancements[​](#enhancements-7)
 
 - Various detector improvements, including better handling of historical data and a detector export function.
 - Improved webhooks with ability to send global alerts.
@@ -63231,7 +63173,7 @@ In this release, you can more easily manage your Image Assurance scan results by
 
 ## October 1, 2024 (version 20.1.0)[​](#october-1-2024-version-2010)
 
-### New features and enhancements[​](#new-features-and-enhancements-16)
+### New features and enhancements[​](#new-features-and-enhancements-17)
 
 #### View and manage detectors for Container Threat Detection[​](#view-and-manage-detectors-for-container-threat-detection)
 
@@ -63249,7 +63191,7 @@ For more information, see [Exclude a process from Security Events alerts](https:
 
 Image Assurance scans results now include information using the [Exploit Prediction Scoring System (EPSS)](https://www.first.org/epss/). EPSS scores help you determine the likelihood that a given vulnerability will be exploited in the near future. Being able to view this information and filter scan results by EPSS score can help you judge the risk of vulnerabilities and prioritize your remediation efforts.
 
-#### Enhancements[​](#enhancements-7)
+#### Enhancements[​](#enhancements-8)
 
 - Functional and performance improvements to Image Assurance scan results filtering.
 
@@ -63261,7 +63203,7 @@ Image Assurance scans results now include information using the [Exploit Predict
 
 ## September 10, 2024 (version 20.0.0)[​](#september-10-2024-version-2000)
 
-### New features and enhancements[​](#new-features-and-enhancements-17)
+### New features and enhancements[​](#new-features-and-enhancements-18)
 
 #### Helm customizations[​](#helm-customizations)
 
@@ -63310,7 +63252,7 @@ For information about upgrading, see [Upgrade Calico Cloud](https://docs.tigera.
 
 ## July 9, 2024 (version 19.4.0)[​](#july-9-2024-version-1940)
 
-## New features and enhancements[​](#new-features-and-enhancements-18)
+## New features and enhancements[​](#new-features-and-enhancements-19)
 
 ### Bulk vulnerability exceptions for Image Assurance[​](#bulk-vulnerability-exceptions-for-image-assurance)
 
@@ -63325,7 +63267,7 @@ For more information, see [Exclude vulnerabilities from scan results](https://do
 
 ## June 11, 2024 (version 19.3.0)[​](#june-11-2024-version-1930)
 
-### New features and enhancements[​](#new-features-and-enhancements-19)
+### New features and enhancements[​](#new-features-and-enhancements-20)
 
 #### Jira integration for Image Assurance scan results[​](#jira-integration-for-image-assurance-scan-results)
 
@@ -63377,7 +63319,7 @@ Calico Cloud now provides the ability to set resource requests and limits for th
 
 ## April 30, 2024 (version 19.2.0)[​](#april-30-2024-version-1920)
 
-### New features and enhancements[​](#new-features-and-enhancements-20)
+### New features and enhancements[​](#new-features-and-enhancements-21)
 
 #### Automated installation with client credentials[​](#automated-installation-with-client-credentials)
 
@@ -63405,7 +63347,7 @@ For more information, see [Configure exclusions for image scanning](https://docs
 
 ## February 28, 2024 (version 19.0.0)[​](#february-28-2024-version-1900)
 
-### New features and enhancements[​](#new-features-and-enhancements-21)
+### New features and enhancements[​](#new-features-and-enhancements-22)
 
 #### Improved flow log filtering for destination domains[​](#improved-flow-log-filtering-for-destination-domains)
 
@@ -63434,7 +63376,7 @@ We've added the following improvements to the [Security events dashboard](https:
 
 ## January 31, 2024 (version 18.3.0)[​](#january-31-2024-version-1830)
 
-### New features and enhancements[​](#new-features-and-enhancements-22)
+### New features and enhancements[​](#new-features-and-enhancements-23)
 
 #### Assign custom roles to users automatically with Entra ID (formerly Azure AD) groups[​](#assign-custom-roles-to-users-automatically-with-entra-id-formerly-azure-ad-groups)
 
@@ -63478,7 +63420,7 @@ This release adds support for Kubernetes 1.28.
 
 ## December 21, 2023 (version 18.2.0)[​](#december-21-2023-version-1820)
 
-### New features and enhancements[​](#new-features-and-enhancements-23)
+### New features and enhancements[​](#new-features-and-enhancements-24)
 
 #### Security Posture Overview dashboard[​](#security-posture-overview-dashboard)
 
@@ -63498,7 +63440,7 @@ This release comes with support for connecting RKE2 clusters to Calico Cloud.
 
 ## November 29, 2023 (version 18.1.0)[​](#november-29-2023-version-1810)
 
-### New features and enhancements[​](#new-features-and-enhancements-24)
+### New features and enhancements[​](#new-features-and-enhancements-25)
 
 - We limited the permissions that are assigned to the Calico Cloud installer. Previously, the installer had cluster administrator privileges. Now the installer gets access only to what is required to install Calico Cloud.
 - **Image Assurance**. We added a filter that lets you sort your list of running images by severity rating.
@@ -63514,7 +63456,7 @@ This release comes with support for connecting RKE2 clusters to Calico Cloud.
 
 ## October 23, 2023 (version 18.0.0)[​](#october-23-2023-version-1800)
 
-### New features and enhancements[​](#new-features-and-enhancements-25)
+### New features and enhancements[​](#new-features-and-enhancements-26)
 
 #### Image Assurance registry scanner[​](#image-assurance-registry-scanner)
 
@@ -63546,7 +63488,7 @@ We've added a new default mode for WAF that is monitor/event only. This allows o
 
 For more information, see [Web application firewall](https://docs.tigera.io/calico-cloud/threat/web-application-firewall).
 
-#### Enhancements[​](#enhancements-8)
+#### Enhancements[​](#enhancements-9)
 
 - You can now remove disconnected clusters from the list of managed clusters. See [Cluster management](https://docs.tigera.io/calico-cloud/operations/cluster-management#remove-a-cluster).
 
@@ -63573,7 +63515,7 @@ If you are experiencing any login issues, go to [https://calicocloud.io](https:/
 
 ## September 11, 2023 (version 17.1.1)[​](#september-11-2023-version-1711)
 
-### New features and enhancements[​](#new-features-and-enhancements-26)
+### New features and enhancements[​](#new-features-and-enhancements-27)
 
 - We redesigned a section of the Image Assurance UI to make it easier to see how vulnerable an image is.
 - We made improvements to the way Container Threat Detection processes large volumes of alerts.
@@ -63585,7 +63527,7 @@ If you are experiencing any login issues, go to [https://calicocloud.io](https:/
 
 ## September 5, 2023 (version 17.1.0)[​](#september-5-2023-version-1710)
 
-### New features and enhancements[​](#new-features-and-enhancements-27)
+### New features and enhancements[​](#new-features-and-enhancements-28)
 
 #### Improvements to software versioning for Calico Cloud installations on managed clusters[​](#improvements-to-software-versioning-for-calico-cloud-installations-on-managed-clusters)
 
@@ -63640,7 +63582,7 @@ This allows you to successfully reinstall or upgrade to Calico Cloud by followin
 
 ## August 21, 2023 (version 17.0.0)[​](#august-21-2023-version-1700)
 
-### New features and enhancements[​](#new-features-and-enhancements-28)
+### New features and enhancements[​](#new-features-and-enhancements-29)
 
 #### New policy recommendations engine for namespace isolation[​](#new-policy-recommendations-engine-for-namespace-isolation)
 
@@ -63679,7 +63621,7 @@ You can now create custom role-based access controls for two new roles: "Usage M
 
 ## June 6, 2023[​](#june-6-2023)
 
-### New features and enhancements[​](#new-features-and-enhancements-29)
+### New features and enhancements[​](#new-features-and-enhancements-30)
 
 #### In-cluster scanning with Image Assurance[​](#in-cluster-scanning-with-image-assurance)
 
@@ -63701,7 +63643,7 @@ Calico Cloud no longer supports installation on RKE or RKE2.
 
 ## April 11, 2023[​](#april-11-2023)
 
-## New features and enhancements[​](#new-features-and-enhancements-30)
+## New features and enhancements[​](#new-features-and-enhancements-31)
 
 ### Updates to Managed Clusters[​](#updates-to-managed-clusters)
 
@@ -63738,7 +63680,7 @@ Calico Cloud components were updated with more restrictive access for pods and c
 
 ## February 28, 2023[​](#february-28-2023)
 
-### New features and enhancements[​](#new-features-and-enhancements-31)
+### New features and enhancements[​](#new-features-and-enhancements-32)
 
 - Adds Bottlerocket support for Container Threat Detection.
 - Adds support for scanning multiple images with Image Assurance
@@ -63750,7 +63692,7 @@ Calico Cloud components were updated with more restrictive access for pods and c
 
 ## February 7, 2023[​](#february-7-2023)
 
-### New features and enhancements[​](#new-features-and-enhancements-32)
+### New features and enhancements[​](#new-features-and-enhancements-33)
 
 #### New and improved Dashboards[​](#new-and-improved-dashboards)
 
@@ -63786,7 +63728,7 @@ Calico Cloud has improved the probes to check readiness and outbound connectivit
 
 ## December 13, 2022[​](#december-13-2022)
 
-### New features and enhancements[​](#new-features-and-enhancements-33)
+### New features and enhancements[​](#new-features-and-enhancements-34)
 
 #### Search by CVE in Image Assurance[​](#search-by-cve-in-image-assurance)
 
